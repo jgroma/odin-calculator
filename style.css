@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    color: #666A86;
+    
+}
+
+h1 {
+    -webkit-text-stroke: 0.8px #E8DDB5
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-container {
+    display: grid;
+    justify-content: space-around;
+    align-content: space-around;
+    font-size: 2rem;
+    height: 60vh;
+    min-width: 40vh;
+    gap: 0.2rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: #666A86;
+    
+}
+
+.display-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    text-align: end;
+    margin: 0.2rem;
+    /*border-radius: 1rem;*/
+    background-color: #E8DDB5;
+
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+
+
+.display {
+    padding-inline-end: 0.3rem;
+    color: #333333;
+
+}
+
+.second-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.third-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.fourth-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.fifth-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.sixth-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+button {
+    flex-grow: 1;
+    font-size: 2rem;
+    width: 50px;
+    background-color: #95B8D1;
+    border-radius: 1rem;
+    color:  #333333;
+
+}
+
+.operator,
+.other-button {
+    background-color: #EDAFB8;
+}
