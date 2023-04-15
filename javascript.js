@@ -8,8 +8,8 @@ let display = document.getElementById('display');
 
 display.innerHTML = 0;
 
-let numberButtons = document.querySelectorAll(".number");
 
+let numberButtons = document.querySelectorAll(".number");
 
 numberButtons.forEach(function (btn) {
 
@@ -85,10 +85,12 @@ const operate = function () {
 
 document.getElementById("equals").addEventListener("click", operate);
 
-document.getElementById("clear").addEventListener("click", clear);
 
-const clear = function () {
+document.getElementById("clear").addEventListener("click", clearDisplay)
+
+function clearDisplay () {
     firstNumber = '';
     secondNumber = '';
+    operator = '';
     display.innerHTML = 0;
-}
+};
