@@ -34,8 +34,13 @@ let operatorButtons = document.querySelectorAll(".operator")
 
 operatorButtons.forEach(function (btn) {
     btn.addEventListener("click", function () {
-        operator = this.innerHTML;
-        display.innerHTML = `${firstNumber} ${operator} ${secondNumber}`;
+        if (firstNumber != "") {
+            operator = this.innerHTML;
+            display.innerHTML = `${firstNumber} ${operator} ${secondNumber}`;
+        } else if (firstNumber = "") {
+            //do nothing
+            //stops user from inputting operators before chosing the first number;
+        }
     });
 });
 
@@ -60,26 +65,35 @@ const divide = function (a,b) {
 const operate = function () {
 
     let result;
-    if (operator === "+") {
-        result = add(parseInt(firstNumber), parseInt(secondNumber));
-    } else if (operator === "-") {
-        result = subtract(parseInt(firstNumber), parseInt(secondNumber));
-    } else if (operator === "*") {
-        result = multiply(parseInt(firstNumber), parseInt(secondNumber));
-    } else if (operator === "/" && (parseInt(firstNumber) === 0 || parseInt(secondNumber) === 0)) {
-        result = "Nope.";
+
+    if (firstNumber != "" && secondNumber != "") {
+
+        if (operator === "+") {
+            result = add(parseInt(firstNumber), parseInt(secondNumber));
+        } else if (operator === "-") {
+            result = subtract(parseInt(firstNumber), parseInt(secondNumber));
+        } else if (operator === "*") {
+            result = multiply(parseInt(firstNumber), parseInt(secondNumber));
+        } else if (operator === "/" && (parseInt(firstNumber) === 0 || parseInt(secondNumber) === 0)) {
+            result = "Nope.";
+        } else {
+            result = divide(parseInt(firstNumber), parseInt(secondNumber));
+        }
+
+        firstNumber = result;
+
+         secondNumber = "";
+
+         operator = "";
+
+        display.innerHTML = firstNumber;
+
+        //prevents user from clicking equals sign and triggering the effect of this function if there is no number chosen
+    } else if (firstNumber != "") {
+        display.innerHTML = firstNumber;
     } else {
-        result = divide(parseInt(firstNumber), parseInt(secondNumber));
+        display.innerHTML = 0;
     }
-
-    firstNumber = result;
-
-    secondNumber = "";
-
-    operator = "";
-
-    display.innerHTML = firstNumber;
-
 
 };
 
