@@ -94,3 +94,20 @@ function clearDisplay () {
     operator = '';
     display.innerHTML = 0;
 };
+
+document.getElementById("negative").addEventListener("click", changeSign);
+
+function changeSign () {
+
+    if (secondNumber === '' && firstNumber.includes("-")) {
+        firstNumber = firstNumber.split('-').join('');
+    } else if (operator != "" && secondNumber.includes("-")) {
+        secondNumber = secondNumber.split('-').join('');
+    } else if (secondNumber === '') {
+        firstNumber = "-" + firstNumber;
+    } else {
+        secondNumber = "-" + secondNumber;
+    };
+
+    display.innerHTML = `${firstNumber} ${operator} ${secondNumber}`;
+};
